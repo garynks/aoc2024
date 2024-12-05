@@ -1,3 +1,4 @@
+### Part 1
 l1 = []
 l2 = []
 
@@ -15,3 +16,14 @@ for i in range(len(l1)):
     totalDistance += abs(l1[i] - l2[i])
 
 print(totalDistance)
+
+### Part 2
+similarity = 0
+
+# Count occurrences of each integer in l1 in l2
+count = {x: l2.count(x) for x in set(l1)}
+
+for i in range(len(l1)):
+    similarity += l1[i] * count[l1[i]]
+
+print(similarity)
